@@ -1,0 +1,29 @@
+* /home/ameya/esim-workspace/2bb/2bb.cir
+
+.include sw4.sub
+r1  vddin net-_r1-pad2_ 1k
+r2  net-_r1-pad2_ net-_r2-pad2_ 1k
+r3  net-_r2-pad2_ net-_r3-pad2_ 1k
+r4  net-_r3-pad2_ gnd 1k
+v2  vddin gnd 3.3
+v3  d0 gnd pulse(0 1.8 0 10p 10p 2n 4n)
+v4  d1 gnd pulse(0 1.8 1n 10p 1p 2n 4n)
+* u4  d1 plot_v1
+* u1  d0 plot_v1
+v1  vdd gnd 3.3
+* u2  ? plot_v1
+* u3  ? plot_v1
+* u5  /out3 plot_v1
+x1 d0 vdd net-_r1-pad2_ net-_r2-pad2_ out1 gnd sw4
+x2 d0 vdd net-_r2-pad2_ net-_r3-pad2_ out2 gnd sw4
+x3 d1 vdd out1 out2 out3 gnd sw4
+.tran 1e-09 10e-09 0e-09
+
+* Control Statements 
+.control
+run
+print allv > plot_data_v.txt
+print alli > plot_data_i.txt
+plot d0 d1 out3
+.endc
+.end

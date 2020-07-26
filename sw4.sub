@@ -1,0 +1,14 @@
+* Subcircuit sw4
+.subckt sw4 ? gnd vdd ? ? ? 
+* /home/ameya/esim/esim-2.0/library/subcircuitlibrary/sw4/sw4.cir
+.include NMOS-180nm.lib
+.include PMOS-180nm.lib
+m1 /d0 /d gnd gnd CMOSN W=0.36e-6 L=0.18e-6 M=1
+m2 vdd /d /d0 vdd CMOSP W=0.9e-6 L=0.18e-6 M=1
+m5 net-_m3-pad1_ /d /vil vdd CMOSP W=0.9e-6 L=0.18e-6 M=1
+m3 net-_m3-pad1_ /d0 /vil gnd CMOSN W=0.36e-6 L=0.18e-6 M=1
+m6 /vih /d net-_m3-pad1_ gnd CMOSN W=0.36e-6 L=0.18e-6 M=1
+m4 /vih /d0 net-_m3-pad1_ vdd CMOSP W=0.9e-6 L=0.18e-6 M=1
+* Control Statements
+
+.ends sw4

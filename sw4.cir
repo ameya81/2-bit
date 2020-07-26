@@ -1,0 +1,17 @@
+* /home/ameya/esim/eSim-2.0/library/SubcircuitLibrary/sw4/sw4.cir
+
+* EESchema Netlist Version 1.1 (Spice format) creation date: Sun Jul 26 12:24:23 2020
+
+* To exclude a component from the Spice Netlist add [Spice_Netlist_Enabled] user FIELD set to: N
+* To reorder the component spice node sequence add [Spice_Node_Sequence] user FIELD and define sequence: 2,1,0
+
+* Sheet Name: /
+M1  /d0 /D gnd gnd eSim_MOS_N		
+M2  vdd /D /d0 vdd eSim_MOS_P		
+M5  Net-_M3-Pad1_ /D /vil vdd eSim_MOS_P		
+M3  Net-_M3-Pad1_ /d0 /vil gnd eSim_MOS_N		
+M6  /vih /D Net-_M3-Pad1_ gnd eSim_MOS_N		
+M4  /vih /d0 Net-_M3-Pad1_ vdd eSim_MOS_P		
+U1  ? gnd vdd ? ? ? PORT		
+
+.end

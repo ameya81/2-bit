@@ -1,0 +1,26 @@
+* /home/ameya/eSim-Workspace/2bb/2bb.cir
+
+* EESchema Netlist Version 1.1 (Spice format) creation date: Sun Jul 26 22:59:45 2020
+
+* To exclude a component from the Spice Netlist add [Spice_Netlist_Enabled] user FIELD set to: N
+* To reorder the component spice node sequence add [Spice_Node_Sequence] user FIELD and define sequence: 2,1,0
+
+* Sheet Name: /
+R1  /vddin Net-_R1-Pad2_ 1k		
+R2  Net-_R1-Pad2_ Net-_R2-Pad2_ 1k		
+R3  Net-_R2-Pad2_ Net-_R3-Pad2_ 1k		
+R4  Net-_R3-Pad2_ gnd 1k		
+v2  /vddin gnd 3.3		
+v3  d0 gnd pulse		
+v4  d1 gnd pulse		
+U4  d1 plot_v1		
+U1  d0 plot_v1		
+v1  vdd gnd 3.3		
+U2  ? plot_v1		
+U3  ? plot_v1		
+U5  /out3 plot_v1		
+X1  d0 vdd Net-_R1-Pad2_ Net-_R2-Pad2_ /out1 gnd sw4		
+X2  d0 vdd Net-_R2-Pad2_ Net-_R3-Pad2_ /out2 gnd sw4		
+X3  d1 vdd /out1 /out2 /out3 gnd sw4		
+
+.end
